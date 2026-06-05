@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Snake_Game")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+faf86e075b17fdbbf5a3a015b9e365c8ae3d3d2d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b0956c16b7f82f4d81fe212b0c13972a1abd402")]
 [assembly: System.Reflection.AssemblyProductAttribute("Snake_Game")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Snake_Game")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

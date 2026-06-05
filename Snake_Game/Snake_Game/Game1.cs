@@ -11,6 +11,9 @@ public class Game1 : Game
     private Texture2D _pixel;
     private int _x;
     private int _y;
+    private const int CellSize = 25;
+    private float _moveTimer;
+    private float _moveInterval = 0.05f;
 
 
     public Game1()
@@ -38,30 +41,37 @@ public class Game1 : Game
 
     protected override void Update(GameTime gameTime)
     {
-        
+
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
+        _moveTimer += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-        if (Keyboard.GetState().IsKeyDown(Keys.Up))
+        if (_moveTimer >= _moveInterval)
         {
-            _y -= 5;
-        }
-        if (Keyboard.GetState().IsKeyDown(Keys.Right))
-        {
-                _x += 5;
-        }
+            _moveTimer = 0f;
 
-        if (Keyboard.GetState().IsKeyDown(Keys.Left))
-        {       _x -= 5;
-        }
-        if (Keyboard.GetState().IsKeyDown(Keys.Down))
-        {
-            _y += 5;
-        }
+            if (Keyboard.GetState().IsKeyDown(Keys.Up))
+            {
+                _y -= CellSize;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            {
+                _x += CellSize;
+            }
 
-        // TODO: Add your update logic here
+            if (Keyboard.GetState().IsKeyDown(Keys.Left))
+            {
+                _x -= CellSize;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.Down))
+            {
+                _y += CellSize;
+            }
 
-        base.Update(gameTime);
+            // TODO: Add your update logic here
+
+            base.Update(gameTime);
+        }
     }
 
     protected override void Draw(GameTime gameTime)
